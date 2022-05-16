@@ -1,5 +1,7 @@
   # The file "getdata_projectfiles_UCI HAR Dataset.zip" needs to be unzipped in
-  # the directory where the function tidyset.R is.
+  # the directory where the file tidyset.R is. There are two functions in this 
+  # files: tidyset() gives you the first tidy set and secondtidyset() gives you 
+  # a narrower version of the first one.
 
 tidyset <- function(){
   
@@ -40,7 +42,7 @@ tidyset <- function(){
   colnames(complete_data) <- column_label
   
   # Create a new data frame by keeping the first two rows and all the variables 
-  # with mean() et std() in their name.
+  # with mean() et std() in their name. Tidy column names.
   
   pattern <- c("mean\\(\\)", "std\\(\\)", "subject_id", "activity_name" )
   selected_data <- complete_data[,grepl(paste(pattern,collapse="|" ), names(complete_data))]
@@ -51,7 +53,7 @@ tidyset <- function(){
   
   # Replace activity codes with activity names.
   
-  selected_data <- selected_data %>% mutate(activity_name = 
+  tidy_set <- selected_data %>% mutate(activity_name = 
                         case_when(activity_name == 1 ~ "walking",
                                   activity_name == 2 ~ "walking upstairs",
                                   activity_name == 3 ~ "walking downstairs",
@@ -59,12 +61,28 @@ tidyset <- function(){
                                   activity_name == 5 ~ "standing",
                                   activity_name == 6 ~ "laying"
                                   ))
-  
-  
-  str(selected_data)
-  # selected.data
+  tidy_set
   
   }
+}
 
-
+secondtidyset <- function(){
+  
+  # Check if dplyr package is installed.
+  
+  if(!require(dplyr)){
+    stop("dplyr not installed")
+  }
+  else{
+  
+  # Call the function tidyset and calculate the mean of all variables 
+  # grouped by subject_id and activity_name.
+  
+  tidy_set <- tidyset()
+  second_tidyset <- tidy_set %>% group_by(subject_id, activity_name) %>%
+    summarise_all(mean) %>% ungroup()
+  
+  second_tidyset
+  
+  }
 }
