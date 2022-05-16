@@ -1,8 +1,8 @@
 
   # The file "getdata_projectfiles_UCI HAR Dataset.zip" needs to be unzipped in
   # the directory where the file run_analisys.R is. There are two functions in this 
-  # files: run_analisys() gives you the first tidy set and secondtidyset() gives you 
-  # a narrower version of the first one.
+  # files: run_analisys() gives you the Step 4 tidy set and secondtidyset() gives you 
+  # Step 5 tidy set of the first one.
 
 
 run_analisys <- function(){
