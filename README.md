@@ -3,4 +3,4 @@ run_analisys() reads and merges the different text files together. Names and sta
 
 You can find Step 4 tidy set in tidyset.csv and Step 5 tidy set in secondtidyset.csv.
 
-Cookbook.pdf contains some informations concerning the variables.  
+Codebook.pdf contains some informations concerning the variables.  
