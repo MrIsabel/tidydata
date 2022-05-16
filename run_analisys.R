@@ -3,6 +3,7 @@
   # files: run_analisys() gives you the first tidy set and secondtidyset() gives you 
   # a narrower version of the first one.
 
+
 run_analisys <- function(){
   
   # Check if dplyr package is installed.
