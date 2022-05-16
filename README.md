@@ -1,2 +1,2 @@
-# tidydata
-Peer-graded Assignment: Getting and Cleaning Data Course Project
+The first tidyset is in the file tidyset.csv.
+The second tidyset is in the fil secondtidyset.csv.
