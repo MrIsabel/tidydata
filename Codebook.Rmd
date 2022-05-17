@@ -12,7 +12,7 @@ activity_name\
 \
 Name of the activities performed by the subjects during the experience.\
 \
-The others column names are modified from the originals provided in the 
+The other column names are modified from the originals provided in the 
 features.txt. (See: Reference) Parenthesis were removed and hyphens changed for 
 underscores. The new names were written only with lower cases. Also, of all the 
 types of measurements done, only the mean and standard deviation were kept. 
